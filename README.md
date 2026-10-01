@@ -23,13 +23,15 @@ Esta extensão para navegadores Chromium (Chrome, Brave, Edge) atua na camada do
 
 ## Instalação 
 
-```sh
 1. Clone este repositório:
+2. 
+```sh
 git clone https://github.com/Joao-Vitor-1812/Anti-Phishing-Extension
 cd Anti-Phishing-Extension
 ```
 
-2. Abra o gerenciador de extensões no seu navegador Chromium:
+2. Abra o gerenciador de extensões no seu navegador, sendo ele baseado em Chromium:
+   
 - Google Chrome: chrome://extensions
 - Brave Browser: brave://extensions
 - Microsoft Edge: edge://extensions
