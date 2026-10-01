@@ -46,11 +46,11 @@ cd Anti-Phishing-Extension
 
 ## Usage
 
-1.Copy the suspicious URL.
-2.Open the extension popup in your browser.
-3.Select the institution claiming ownership of the link (e.g., Gov.br, Banco do Brasil).
-4.Paste the link into the analysis field and submit.
-5.The extension evaluates the FQDN hierarchy and outputs an immediate classification: verified official domain or fraudulent attempt.
+1. Copy the suspicious URL.
+2. Open the extension popup in your browser.
+3. Select the institution claiming ownership of the link (e.g., Gov.br, Banco do Brasil).
+4. Paste the link into the analysis field and submit.
+5. The extension evaluates the FQDN hierarchy and outputs an immediate classification: verified official domain or fraudulent attempt.
 
 ---
 
