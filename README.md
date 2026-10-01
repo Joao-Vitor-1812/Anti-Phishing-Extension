@@ -21,26 +21,13 @@ Esta extensão para navegadores Chromium (Chrome, Brave, Edge) atua na camada do
 
 ---
 
-## Arquitetura do Projeto
+## Instalação 
 
-Estrutura de diretórios recomendada:
-
-- manifest.json: Configuração da extensão (Manifest V3)
-- popup.html: Interface de usuário da extensão
-- popup.js: Orquestrador de eventos e manipulação de DOM
-- engine/validator.js: Lógica de decomposição e checagem de domínios
-- engine/domains.json: Base estática de domínios oficiais
-- assets/: Ícones e elementos visuais
-- README.md: Documentação em Português
-- README.en.md: English Documentation
-
----
-
-## Instalação em Modo de Desenvolvimento
-
+```sh
 1. Clone este repositório:
-git clone https://github.com/seu-usuario/phishguard-extension.git
-cd phishguard-extension
+git clone https://github.com/Joao-Vitor-1812/Anti-Phishing-Extension
+cd Anti-Phishing-Extension
+```
 
 2. Abra o gerenciador de extensões no seu navegador Chromium:
 - Google Chrome: chrome://extensions
@@ -57,7 +44,7 @@ cd phishguard-extension
 
 ## Como Usar
 
-1. Copie a URL suspeita recebida por mensagem, e-mail ou rede social.
+1. Copie a URL suspeita.
 2. Abra o popup da extensão no navegador.
 3. Selecione a instituição que o link diz representar (ex: Gov.br, Banco do Brasil).
 4. Cole o link no campo de análise e confirme.
@@ -67,7 +54,7 @@ cd phishguard-extension
 
 ## Licença
 
-Distribuído sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+MIT.
 
 ---
 
