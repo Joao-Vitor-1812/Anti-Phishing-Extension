@@ -26,9 +26,9 @@ This Chromium-based browser extension (Chrome, Brave, Edge) operates on the clie
 1. Clone this repository:
 
 ```sh
-git clone [https://github.com/Joao-Vitor-1812/Anti-Phishing-Extension](https://github.com/Joao-Vitor-1812/Anti-Phishing-Extension)
+git clone https://github.com/Joao-Vitor-1812/Anti-Phishing-Extension
 cd Anti-Phishing-Extension
-````
+```
 
 2. Open the extensions manager in your Chromium-based browser:
 
