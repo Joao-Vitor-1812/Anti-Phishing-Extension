@@ -1,4 +1,4 @@
-# PhishGuard Browser Extension
+# Extensão Anti Phishing 
 
 Validador de URLs e detector de phishing focado em engenharia reversa de domínios para autenticação de canais institucionais e bancários.
 
