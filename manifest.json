@@ -5,6 +5,6 @@
     "manifest_version": 3,
     "permissions": ["activeTab", "scripting"],
     "action": {
-      "default_popup": "test.html"
+      "default_popup": "popup/test.html"
     }
   }

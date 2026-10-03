@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <form class="card"> <!-- quando seleciona o orgão a imagem dele aparece no fundo -->
+        
+
+        <select id="instituicao" class="select" required>
+            <option value="" disabled selected hidden>Selecione a Instituição</option>
+            <option value="govbr">Gov.br (Governo Federal)</option>
+            <option value="bb">Banco do Brasil</option>
+        </select>
+
+        <input type="text" class="input" placeholder="Cole o link suspeito aqui">
+
+        <button type="submit" class="button">Verificar</button>
+
+        <div id="resultado" class="resultado-box"></div>
+    </form>
+
+    <script src="../scripts/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* Reset básico e tipografia */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f1f3f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card Principal / Formulário */
+.card {
+    position: relative;
+    background-color: #ffffff;
+    width: 320px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Cria espaçamento equilibrado entre todos os filhos */
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #202124;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+/* Padronização dos Campos: Select e Input */
+.select,
+.input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    border: 1.5px solid #dadce0;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9); /* leve transparência */
+    backdrop-filter: blur(4px); /* dá um efeito moderno de vidro fosco */
+    color: #3c4043;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito visual ao clicar/digitar nos campos */
+.select:focus,
+.input:focus {
+    border-color: #428d70;
+    box-shadow: 0 0 0 3px rgba(66, 141, 112, 0.15);
+}
+
+/* Estilo do Placeholder do Select */
+.select:invalid,
+.select option[value=""] {
+    color: #80868b;
+}
+
+.select {
+    cursor: pointer;
+    /* Ícone discreto de seta customizada para substituir a seta nativa */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%235f6368'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+/* Botão de Ação */
+.button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: #428d70;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 4px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button:hover {
+    background-color: #35735b;
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+/* Quando selecionar Gov.br */
+.card.theme-govbr {
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.85) 100%),
+        url('../images/govbr-logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* ou teste 80% se achar que encostou muito nas bordas */
+}
+
+/* Quando selecionar Banco do Brasil */
+.card.theme-bb {
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.85) 100%),
+        url('../images/bb-logo.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 112%;
+}
+
+/* Área de Resultado */
+.resultado-box {
+    display: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    animation: fadeIn 0.25s ease-in-out;
+}
+
+.resultado-box.valido {
+    display: block;
+    background-color: #e6f4ea;
+    color: #137333;
+    border: 1px solid #34a853;
+}
+
+.resultado-box.perigo {
+    display: block;
+    background-color: #fce8e6;
+    color: #c5221f;
+    border: 1px solid #ea4335;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
