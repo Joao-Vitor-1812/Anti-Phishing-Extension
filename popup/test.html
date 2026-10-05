@@ -6,20 +6,26 @@
 </head>
 <body>
 
-    <form class="card"> <!-- quando seleciona o orgão a imagem dele aparece no fundo -->
-        
+    <form class="card">
+        <div id="area-formulario">
+            <select id="instituicao" class="select" required>
+                <option value="" disabled selected hidden>Selecione a Instituição</option>
+                <option value="govbr">Governo Federal</option>
+                <option value="bb">Banco do Brasil</option>
+                <option value="santander">Santander</option>
+                <option value="itau">Itaú</option>
+                <option value="nubank">Nubank</option>
+            </select>
 
-        <select id="instituicao" class="select" required>
-            <option value="" disabled selected hidden>Selecione a Instituição</option>
-            <option value="govbr">Gov.br (Governo Federal)</option>
-            <option value="bb">Banco do Brasil</option>
-        </select>
+            <input type="text" class="input" placeholder="Cole o link suspeito">
 
-        <input type="text" class="input" placeholder="Cole o link suspeito aqui">
+            <button type="submit" class="button">Verificar</button>
+        </div>
 
-        <button type="submit" class="button">Verificar</button>
-
-        <div id="resultado" class="resultado-box"></div>
+        <div id="area-resultado" class="oculto">
+            <div id="banner-resultado"></div>
+            <button id="btn-voltar" type="button" class="button btn-voltar">Verificar outro link</button>
+        </div>
     </form>
 
     <script src="../scripts/script.js"></script>
