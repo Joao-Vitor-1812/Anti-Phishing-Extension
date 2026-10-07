@@ -67,6 +67,24 @@ form.addEventListener('submit', (event) => {
         urlDigitada = "https://" + urlDigitada;
     }
 
+    //valida se o site existe, para não dar falso-positivo
+    async function checaExistenciaDominio(urlDigitada) {
+        try{
+            const response = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(hostname)}&type=A`);
+            const data = await response.json();
+
+            if(data.Status == 3){//se retornar 3 é pq o site não existe 
+                return false
+            }
+            return data.Status === 0;//url existente
+        }catch{
+            console.error("Erro ao consultar DNS:", error); //mudar para alterar a imagem de saída para o usuário
+            return false;
+        }
+    }
+    
+
+
     try {
         const validaUrl = new URL(urlDigitada);
         const hostname = validaUrl.hostname;
