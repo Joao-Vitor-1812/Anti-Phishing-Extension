@@ -36,8 +36,10 @@ function mostrarResultado(tipo) {
     bannerResultado.className = '';
     if (tipo === 'confiavel') {
         bannerResultado.classList.add('img-oficial');
-    } else {
+    } else if(tipo === 'suspeito'){
         bannerResultado.classList.add('img-suspeito');
+    } else if(tipo === 'inexistente'){
+        bannerResultado.classList.add('img-inexistente');
     }
 }
 
@@ -51,7 +53,7 @@ btnVoltar.addEventListener('click', () => {
 });
 
 // 5. Evento de envio para validar o link
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const instituicao = selectInstituicao.value;
@@ -65,30 +67,16 @@ form.addEventListener('submit', (event) => {
 
     if (!urlDigitada.startsWith('http://') && !urlDigitada.startsWith('https://')) {
         urlDigitada = "https://" + urlDigitada;
-    }
-
-    //valida se o site existe, para não dar falso-positivo
-    async function checaExistenciaDominio(urlDigitada) {
-        try{
-            const response = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(hostname)}&type=A`);
-            const data = await response.json();
-
-            if(data.Status == 3){//se retornar 3 é pq o site não existe 
-                return false
-            }
-            return data.Status === 0;//url existente
-        }catch{
-            console.error("Erro ao consultar DNS:", error); //mudar para alterar a imagem de saída para o usuário
-            return false;
-        }
-    }
-    
-
+    }    
 
     try {
         const validaUrl = new URL(urlDigitada);
         const hostname = validaUrl.hostname;
 
+        const existe = await checaExistenciaDominio(hostname);
+        if (!existe) {
+            return; // Se retornar 3 (NXDOMAIN) ou der erro, checaExistenciaDominio já exibiu a tela
+        }
         let confiavel = false;
         for (let i = 0; i < dominiosValidos.length; i++) {
             if (hostname === dominiosValidos[i] || hostname.endsWith('.' + dominiosValidos[i])) {
@@ -107,3 +95,21 @@ form.addEventListener('submit', (event) => {
         mostrarResultado('suspeito');
     }
 });
+
+//valida se o site existe, para não dar falso-positivo
+async function checaExistenciaDominio(dominio) {
+        try{
+            const response = await fetch(`https://dns.google/resolve?name=${encodeURIComponent(dominio)}&type=A`);
+            const data = await response.json();
+
+            if(data.Status == 3){//se retornar 3 é pq o site não existe 
+                mostrarResultado('inexistente');
+                return false
+            }
+            return data.Status === 0;//url existente
+        }catch{
+            console.error("Erro ao consultar DNS:", error);
+            mostrarResultado('inexistente');
+            return false;
+        }
+    }
