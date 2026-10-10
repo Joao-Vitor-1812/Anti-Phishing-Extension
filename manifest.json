@@ -1,9 +1,8 @@
 {
-    "name": "Extensão teste",
-    "description": "Teste de Extensão para o projeto",
+    "name": "Extensão Anti Phishing",
+    "description": "Validador de URLs e detector de phishing focado em engenharia reversa de domínios para autenticação de canais institucionais, bancários e redes sociais.",
     "version": "1.0",
     "manifest_version": 3,
-    "permissions": ["activeTab", "scripting"],
     "action": {
       "default_popup": "popup/test.html"
     }

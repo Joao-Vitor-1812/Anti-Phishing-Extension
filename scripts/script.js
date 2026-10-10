@@ -114,7 +114,7 @@ async function checaExistenciaDominio(dominio) {
                 return false
             }
             return data.Status === 0;//url existente
-        }catch{
+        }catch (error){
             console.error("Erro ao consultar DNS:", error);
             mostrarResultado('inexistente');//exibe a flag de site inexistente 
             return false;
