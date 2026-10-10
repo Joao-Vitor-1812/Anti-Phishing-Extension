@@ -1,14 +1,14 @@
 # Extensão Anti Phishing 
 
-Validador de URLs e detector de phishing focado em engenharia reversa de domínios para autenticação de canais institucionais e bancários.
+Validador de URLs e detector de phishing focado em engenharia reversa de domínios para autenticação de canais institucionais, bancários e redes sociais.
 
 ---
 
 ## Visão Geral
 
-A maioria dos ataques de phishing modernos utiliza técnicas de engenharia social associadas a domínios registrados com pequenas variações visuais (typosquatting), parâmetros de rastreamento forjados ou serviços de hospedagem genéricos (.com, .online) simulando portais governamentais ou entidades bancárias.
+A maioria dos ataques de phishing modernos utilizam técnicas de engenharia social associadas a domínios registrados com pequenas variações visuais (typosquatting), parâmetros de rastreamento forjados ou serviços de hospedagem genéricos (.com, .online) simulando portais governamentais, entidades bancárias ou multinacionais.
 
-Esta extensão para navegadores Chromium (Chrome, Brave, Edge) atua na camada do cliente para decompor FQDNs (Fully Qualified Domain Names), isolar a zona pública (eTLD+1) e validar se o endereço pertence rigorosamente aos canais oficiais da entidade selecionada antes que o usuário insira credenciais ou dados sensíveis.
+Esta extensão para navegadores Chromium (Chrome, Brave, Edge), atua na camada do cliente para decompor FQDNs (Fully Qualified Domain Names), isolar a zona pública (eTLD+1) e validar se o endereço pertence rigorosamente aos canais oficiais da entidade selecionada antes que o usuário insira credenciais ou dados sensíveis.
 
 ---
 
