@@ -20,7 +20,6 @@ Esta extensão para navegadores Chromium (Chrome, Brave, Edge), atua na camada d
   - Órgãos Governamentais: Governo Federal (Gov.br) e Caixa Econômica Federal.
   - Setor Bancário & Fintechs: Banco do Brasil, Bradesco, Itaú, Santander e Nubank.
   - Big Techs & Mensageria: Google, WhatsApp e Instagram.
-     > *A justificativa que fundamentam a seleção de cada uma dessas entidades estão detalhados em [Metodologia e Fontes de Seleção](./FONTES.md).*
 - Sem Permissões Invasivas: Construída seguindo o padrão Manifest V3, sem captura de histórico nem monitoramento contínuo de tráfego.
 - Verificação de Existência via DoH (DNS-over-HTTPS): Consulta em tempo real à API do Google DNS para detectar domínios inexistentes ou não registrados (NXDOMAIN), prevenindo falsos positivos com links forjados.
 
